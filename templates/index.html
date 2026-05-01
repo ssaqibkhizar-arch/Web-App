@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Wumpus Logic Agent</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+
+    <header id="app-header">
+        <h1>Knowledge-Based Dynamic Wumpus Agent</h1>
+        <p>Propositional Logic & Resolution Refutation Visualizer</p>
+    </header>
+
+    <main id="app-container">
+
+        <aside id="control-panel">
+
+            <section class="panel-section" id="environment-settings">
+                <h2>Environment Setup</h2>
+                <div class="input-group">
+                    <label for="grid-rows">Rows (Height):</label>
+                    <input type="number" id="grid-rows" name="grid-rows" min="3" max="10" value="4">
+                </div>
+                <div class="input-group">
+                    <label for="grid-cols">Columns (Width):</label>
+                    <input type="number" id="grid-cols" name="grid-cols" min="3" max="10" value="4">
+                </div>
+                <div class="button-group">
+                    <button id="btn-init" type="button">Initialize Environment</button>
+                    <button id="btn-reset" type="button" disabled>Reset Grid</button>
+                </div>
+            </section>
+
+            <section class="panel-section" id="agent-controls">
+                <h2>Agent Actions</h2>
+                <div class="button-group">
+                    <button id="btn-step" type="button" disabled>Take Next Logic Step</button>
+                </div>
+            </section>
+
+            <section class="panel-section" id="live-metrics">
+                <h2>Real-Time Metrics</h2>
+                <ul class="metrics-list">
+                    <li>
+                        <span class="metric-label">Agent Status:</span>
+                        <span class="metric-value" id="status-display">Awaiting Initialization</span>
+                    </li>
+                    <li>
+                        <span class="metric-label">Current Position:</span>
+                        <span class="metric-value" id="position-display">N/A</span>
+                    </li>
+                    <li>
+                        <span class="metric-label">Active Percepts:</span>
+                        <span class="metric-value" id="percepts-display">None</span>
+                    </li>
+                    <li>
+                        <span class="metric-label">Inference Steps:</span>
+                        <span class="metric-value" id="inference-display">0</span>
+                    </li>
+                </ul>
+            </section>
+
+        </aside>
+
+        <section id="visualization-area">
+
+            <div id="grid-wrapper">
+                <div id="wumpus-grid" class="grid-container">
+                    <p class="placeholder-text">Please initialize the environment to render the grid.</p>
+                </div>
+            </div>
+
+            <div id="grid-legend">
+                <h3>Map Legend</h3>
+                <ul class="legend-list">
+                    <li><span class="legend-box agent-icon">🤖</span> Current Agent Location</li>
+                    <li><span class="legend-box safe-cell"></span> Confirmed Safe Cell</li>
+                    <li><span class="legend-box unknown-cell"></span> Unvisited / Unknown Logic</li>
+                    <li><span class="legend-box hazard-cell"></span> Confirmed Hazard (Pit / Wumpus)</li>
+                </ul>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Dynamic AI Pathfinding Project &bull; Built with Flask and Vanilla JS</p>
+    </footer>
+
+    <script src="../static/script.js"></script>
+</body>
+
+</html>
