@@ -49,7 +49,3 @@ If you want to run this project locally on your machine, follow these steps:
 ### Prerequisites
 Make sure you have [Python](https://www.python.org/downloads/) installed on your system.
 
-### 1. Clone the Repository
-```bash
-git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-cd your-repo-name
